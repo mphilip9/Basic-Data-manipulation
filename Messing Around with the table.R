@@ -15,4 +15,12 @@ str_count(refine$company, "AK")
 str_count(refine$company, "zo")
 str_count(refine$company, "z0")
 
-refine$company_test <- refine$company
+refine$company[1:6] <- "Phillips"
+
+refine$company[14:16] <- "Phillips"
+
+refine$company[7:13] <- "Akzo"
+
+refine$company[17:21] <- "Van Houten"
+
+refine$company[22:25] <- "Unilever"

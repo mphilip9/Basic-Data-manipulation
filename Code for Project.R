@@ -34,5 +34,4 @@ refine_new <- refine_new %>% mutate(Product_Category = recode(Product_Code, "p" 
 View(refine_new)
 
 #Concatenating Address into one column
-refine_new %>% unite_(col="Full_Address", , sep=", ", remove=FALSE)
-
+refine_new$full_address <- paste(refine_new$address, refine_new$city, refine_new$country, sep=", ")

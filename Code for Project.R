@@ -35,3 +35,9 @@ View(refine_new)
 
 #Concatenating Address into one column
 refine_new$full_address <- paste(refine_new$address, refine_new$city, refine_new$country, sep=", ")
+
+install.packages("fastDummies")
+library(fastDummies)
+#Creating dummy variables for the company names
+refine_new <- refine_new %>% dummy_cols(select_columns = "company")
+refine_new <- refine_new %>% dummy_cols(select_columns = "Product_Category")

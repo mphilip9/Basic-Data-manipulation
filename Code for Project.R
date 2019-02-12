@@ -41,3 +41,5 @@ library(fastDummies)
 #Creating dummy variables for the company names
 refine_new <- refine_new %>% dummy_cols(select_columns = "company")
 refine_new <- refine_new %>% dummy_cols(select_columns = "Product_Category")
+
+write.csv(refine_new, 'refine_clean.csv')

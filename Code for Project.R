@@ -1,19 +1,9 @@
 install.packages("dplyr")
 install.packages("tidyr")
-install.packages("stringr")
 library(dplyr)
 library(tidyr)
-library(stringr)
 
 tbl_df(refine)
-# checking pattern for Phillips
-str_count(refine$company, "phi")
-str_count(refine$company, "lip")
-
-#checking patterns for Akzo
-str_count(refine$company, "AK")
-str_count(refine$company, "zo")
-str_count(refine$company, "z0")
 
 #Changing names
 refine$company[1:6] <- "Phillips"
@@ -43,3 +33,5 @@ refine_new <- refine_new %>% dummy_cols(select_columns = "company")
 refine_new <- refine_new %>% dummy_cols(select_columns = "Product_Category")
 
 write.csv(refine_new, 'refine_clean.csv')
+
+write.csv(refine_original, 'refine_original.csv')
